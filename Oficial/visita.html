@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Visita - Sistema de Controle de Endemias</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="dashboard.html" class="logo-link">
+                    <div class="logo-circle">CE</div>
+                    <span class="logo-text">Controle de Endemias</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="mapa.html">Mapa</a>
+                <a href="visitas.html">Minhas Visitas</a>
+                <a href="boletins.html">Boletins</a>
+            </nav>
+            <div class="header-right">
+                <button class="icon-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="icon-btn">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+                <div class="dropdown">
+                    <button class="icon-btn dropdown-toggle">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Minha Conta</div>
+                        <a href="#" class="dropdown-item"><i class="fas fa-user"></i> Perfil</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-cog"></i> Configurações</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sub-header">
+        <a href="mapa.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h2>Registro de Visita</h2>
+        <div class="sub-header-actions">
+            <button class="btn btn-outline btn-sm">
+                <i class="fas fa-save"></i> Salvar Rascunho
+            </button>
+        </div>
+    </div>
+
+    <main class="container main-content">
+        <div class="card mb-4">
+            <div class="card-content">
+                <div class="residence-info">
+                    <i class="fas fa-home"></i>
+                    <div class="flex-1">
+                        <div class="residence-id">Residência #1254</div>
+                        <div class="residence-address">Rua das Flores, 123</div>
+                        <div class="residence-neighborhood">Bairro Jardim das Oliveiras</div>
+                    </div>
+                    <button class="btn btn-outline btn-sm">
+                        <i class="fas fa-map-marker-alt"></i> Ver no Mapa
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab-list">
+                <button class="tab-btn active" data-tab="inspecao">Inspeção</button>
+                <button class="tab-btn" data-tab="focos">Focos</button>
+                <button class="tab-btn" data-tab="observacoes">Observações</button>
+            </div>
+            
+            <div class="tab-content active" id="inspecao">
+                <form class="form-vertical">
+                    <div class="form-group">
+                        <label for="tipo-imovel">Tipo de Imóvel</label>
+                        <select id="tipo-imovel" class="form-select">
+                            <option value="residencia" selected>Residência</option>
+                            <option value="comercio">Comércio</option>
+                            <option value="terreno">Terreno Baldio</option>
+                            <option value="publico">Prédio Público</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Situação do Imóvel</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="habitado" name="situacao" value="habitado" checked>
+                                <label for="habitado">Habitado</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="fechado" name="situacao" value="fechado">
+                                <label for="fechado">Fechado</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="recusa" name="situacao" value="recusa">
+                                <label for="recusa">Recusa</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="abandonado" name="situacao" value="abandonado">
+                                <label for="abandonado">Abandonado</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="form-group">
+                        <label>Condições do Quintal</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="limpo" name="quintal[]" value="limpo">
+                                <label for="limpo">Limpo</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mato" name="quintal[]" value="mato">
+                                <label for="mato">Com mato alto</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="entulho" name="quintal[]" value="entulho">
+                                <label for="entulho">Entulho</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="lixo" name="quintal[]" value="lixo">
+                                <label for="lixo">Lixo acumulado</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Condições da Caixa D'água</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="tampada" name="caixadagua" value="tampada" checked>
+                                <label for="tampada">Tampada</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="semtampa" name="caixadagua" value="semtampa">
+                                <label for="semtampa">Sem tampa</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="naovisivel" name="caixadagua" value="naovisivel">
+                                <label for="naovisivel">Não visível</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="naopossui" name="caixadagua" value="naopossui">
+                                <label for="naopossui">Não possui</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="focos">
+                <form class="form-vertical">
+                    <div class="section-header">
+                        <h3>Focos Encontrados</h3>
+                        <p>Registre os focos de mosquito encontrados no imóvel</p>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-content">
+                            <div class="form-header">
+                                <label>Tipo de Foco</label>
+                                <button type="button" class="btn-text danger">Remover</button>
+                            </div>
+                            <select class="form-select" id="tipo-foco">
+                                <option value="aguaparada" selected>Água Parada</option>
+                                <option value="pneus">Pneus</option>
+                                <option value="garrafas">Garrafas</option>
+                                <option value="lixo">Lixo</option>
+                                <option value="calhas">Calhas</option>
+                                <option value="outros">Outros</option>
+                            </select>
+
+                            <div class="form-group mt-3">
+                                <label for="localizacao">Localização</label>
+                                <input type="text" id="localizacao" placeholder="Ex: Quintal dos fundos" class="form-input">
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="quantidade">Quantidade</label>
+                                <input type="number" id="quantidade" value="1" min="1" class="form-input">
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="obs-foco">Observações</label>
+                                <textarea id="obs-foco" placeholder="Detalhes adicionais sobre o foco encontrado" class="form-textarea"></textarea>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label>Fotos</label>
+                                <div class="upload-area">
+                                    <i class="fas fa-camera"></i>
+                                    <div class="mt-2">
+                                        <button type="button" class="btn btn-outline">
+                                            <i class="fas fa-upload"></i> Adicionar Foto
+                                        </button>
+                                    </div>
+                                    <p class="upload-hint">JPG, PNG ou HEIC até 5MB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-outline btn-block">
+                        + Adicionar Outro Foco
+                    </button>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="observacoes">
+                <form class="form-vertical">
+                    <div class="form-group">
+                        <label for="obs-gerais">Observações Gerais</label>
+                        <textarea id="obs-gerais" placeholder="Registre informações adicionais sobre a visita" class="form-textarea" rows="6"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Casos Suspeitos ou Confirmados</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="dengue" name="casos[]" value="dengue">
+                                <label for="dengue">Dengue</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="zika" name="casos[]" value="zika">
+                                <label for="zika">Zika</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="chikungunya" name="casos[]" value="chikungunya">
+                                <label for="chikungunya">Chikungunya</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orientacoes">Orientações Fornecidas</label>
+                        <textarea id="orientacoes" placeholder="Descreva as orientações dadas ao morador" class="form-textarea" rows="4"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer-bar">
+        <div class="container">
+            <button class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+            <button class="btn btn-primary">
+                <i class="fas fa-check-circle"></i> Concluir Visita
+            </button>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

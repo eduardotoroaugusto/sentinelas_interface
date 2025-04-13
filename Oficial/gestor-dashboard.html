@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Gestor - e-SENTINELA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="gestor-dashboard.html" class="logo-link">
+                    <div class="logo-circle">CE</div>
+                    <span class="logo-text">e-SENTINELA</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="gestor-dashboard.html" class="active">Dashboard</a>
+                <a href="gestor-equipes.html">Equipes</a>
+                <a href="relatorios.html">Relatórios</a>
+                <a href="gestor-mapa.html">Mapa</a>
+            </nav>
+            <div class="header-right">
+                <button class="icon-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="icon-btn">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+                <div class="dropdown">
+                    <button class="icon-btn dropdown-toggle">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Minha Conta</div>
+                        <a href="#" class="dropdown-item"><i class="fas fa-user"></i> Perfil</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-cog"></i> Configurações</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <div class="page-header">
+            <div>
+                <h1>Painel de Gestão</h1>
+                <p>Coordenação de Vigilância em Saúde</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-calendar"></i> 12 de Abril de 2025
+                </button>
+                <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-download"></i> Exportar Relatórios
+                </button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Visitas Realizadas</h3>
+                    <p>Hoje</p>
+                </div>
+                <div class="card-content">
+                    <div class="stat-value success">127</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%;"></div>
+                    </div>
+                    <div class="progress-text">65% da meta diária</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Agentes em Campo</h3>
+                    <p>Ativos agora</p>
+                </div>
+                <div class="card-content">
+                    <div class="stat-value info">18</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                    <div class="progress-text">90% da equipe</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Focos Identificados</h3>
+                    <p>Esta semana</p>
+                </div>
+                <div class="card-content">
+                    <div class="stat-value warning">43</div>
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #3b82f6;"></span>
+                            <span>Água parada: 21</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #a855f7;"></span>
+                            <span>Lixo: 12</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #22c55e;"></span>
+                            <span>Pneus: 6</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #f97316;"></span>
+                            <span>Outros: 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Casos Suspeitos</h3>
+                    <p>Últimos 30 dias</p>
+                </div>
+                <div class="card-content">
+                    <div class="stat-value danger">12</div>
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #ef4444;"></span>
+                            <span>Dengue: 8</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #eab308;"></span>
+                            <span>Zika: 2</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #ec4899;"></span>
+                            <span>Chikungunya: 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab-list">
+                <button class="tab-btn active" data-tab="mapa">Mapa de Cobertura</button>
+                <button class="tab-btn" data-tab="equipes">Equipes</button>
+                <button class="tab-btn" data-tab="relatorios">Relatórios</button>
+            </div>
+            
+            <div class="tab-content active" id="mapa">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Cobertura de Visitas por Bairro</h3>
+                        <p>Visualização geográfica das áreas atendidas</p>
+                    </div>
+                    <div class="card-content p-0">
+                        <div class="map-container">
+                            <!-- Aqui seria integrado o mapa real com Google Maps ou OpenStreetMap -->
+                            <div class="map-placeholder">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Mapa interativo de cobertura seria exibido aqui</p>
+                                <p class="small">Integração com Google Maps ou OpenStreetMap</p>
+                            </div>
+
+                            <!-- Marcadores de exemplo no mapa -->
+                            <div class="coverage-marker success" style="top: 25%; left: 25%;"></div>
+                            <div class="coverage-marker warning" style="top: 33%; right: 33%;"></div>
+                            <div class="coverage-marker danger" style="bottom: 25%; right: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="equipes">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Desempenho das Equipes</h3>
+                        <p>Visitas realizadas por equipe</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="team-list">
+                            <div class="team-item">
+                                <div class="team-info">
+                                    <div class="team-icon info">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <div class="team-name">Equipe Norte</div>
+                                        <div class="team-members">6 agentes ativos</div>
+                                    </div>
+                                </div>
+                                <div class="team-stats">
+                                    <div class="team-visits">42 visitas</div>
+                                    <div class="team-completion success">98% concluídas</div>
+                                </div>
+                            </div>
+
+                            <div class="team-item">
+                                <div class="team-info">
+                                    <div class="team-icon purple">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <div class="team-name">Equipe Sul</div>
+                                        <div class="team-members">5 agentes ativos</div>
+                                    </div>
+                                </div>
+                                <div class="team-stats">
+                                    <div class="team-visits">38 visitas</div>
+                                    <div class="team-completion success">85% concluídas</div>
+                                </div>
+                            </div>
+
+                            <div class="team-item">
+                                <div class="team-info">
+                                    <div class="team-icon success">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <div class="team-name">Equipe Leste</div>
+                                        <div class="team-members">4 agentes ativos</div>
+                                    </div>
+                                </div>
+                                <div class="team-stats">
+                                    <div class="team-visits">31 visitas</div>
+                                    <div class="team-completion warning">76% concluídas</div>
+                                </div>
+                            </div>
+
+                            <div class="team-item">
+                                <div class="team-info">
+                                    <div class="team-icon orange">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <div class="team-name">Equipe Oeste</div>
+                                        <div class="team-members">3 agentes ativos</div>
+                                    </div>
+                                </div>
+                                <div class="team-stats">
+                                    <div class="team-visits">16 visitas</div>
+                                    <div class="team-completion danger">45% concluídas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="relatorios">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Relatórios Disponíveis</h3>
+                        <p>Dados consolidados para análise</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="report-list">
+                            <div class="report-item">
+                                <div class="report-icon info">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Boletim Semanal</div>
+                                    <div class="report-date">Semana 15 - Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon success">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Relatório de Focos</div>
+                                    <div class="report-date">Março/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Áreas de Risco</div>
+                                    <div class="report-date">Atualizado em 10/04/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon purple">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Dados para SISPNCD</div>
+                                    <div class="report-date">Prontos para envio</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-arrow-up-right"></i> Enviar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-grid-2">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Evolução de Focos</h3>
+                    <p>Últimos 6 meses</p>
+                </div>
+                <div class="card-content chart-placeholder">
+                    <i class="fas fa-chart-bar icon-large text-muted"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Alertas Recentes</h3>
+                    <p>Situações que requerem atenção</p>
+                </div>
+                <div class="card-content">
+                    <div class="alert-list">
+                        <div class="alert-item">
+                            <i class="fas fa-exclamation-triangle danger"></i>
+                            <div>
+                                <div class="alert-text">Alta concentração de focos no Bairro Centro</div>
+                                <div class="alert-info">Hoje, 09:30 - Equipe Sul</div>
+                            </div>
+                        </div>
+                        <div class="alert-item">
+                            <i class="fas fa-exclamation-triangle warning"></i>
+                            <div>
+                                <div class="alert-text">Terreno abandonado com múltiplos criadouros</div>
+                                <div class="alert-info">Ontem, 14:15 - Equipe Leste</div>
+                            </div>
+                        </div>
+                        <div class="alert-item">
+                            <i class="fas fa-exclamation-triangle warning"></i>
+                            <div>
+                                <div class="alert-text">Caso suspeito de dengue não notificado</div>
+                                <div class="alert-info">11/04/2025 - Equipe Norte</div>
+                            </div>
+                        </div>
+                        <div class="alert-item">
+                            <i class="fas fa-exclamation-triangle info"></i>
+                            <div>
+                                <div class="alert-text">Baixa cobertura de visitas no Bairro Oeste</div>
+                                <div class="alert-info">10/04/2025 - Coordenação</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

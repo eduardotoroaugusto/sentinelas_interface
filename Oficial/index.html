@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - e-SENTINELA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient">
+    <div class="container login-container">
+        <div class="login-header">
+            <div class="logo">
+                <div class="logo-circle">CE</div>
+            </div>
+            <h1>e-SENTINELA</h1>
+            <p>Prefeitura Municipal de Cáceres/MT</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Acesso ao Sistema</h2>
+                <p>Entre com suas credenciais para acessar o sistema</p>
+            </div>
+            <div class="card-content">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">Usuário</label>
+                        <input type="email" id="email" placeholder="seu.email@caceres.mt.gov.br" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="login-footer">
+            <p>© 2025 Secretaria Municipal de Saúde de Cáceres</p>
+            <p>Suporte técnico: suporte@caceres.mt.gov.br</p>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

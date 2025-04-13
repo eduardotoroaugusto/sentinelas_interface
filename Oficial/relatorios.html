@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - e-SENTINELA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-left">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="dashboard.html" class="logo-link">
+                    <div class="logo-circle">CE</div>
+                    <span class="logo-text">e-SENTINELA</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="mapa.html">Mapa</a>
+                <a href="visitas.html">Minhas Visitas</a>
+                <a href="relatorios.html" class="active">Relatórios</a>
+            </nav>
+            <div class="header-right">
+                <button class="icon-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="icon-btn">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+                <div class="dropdown">
+                    <button class="icon-btn dropdown-toggle">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Minha Conta</div>
+                        <a href="#" class="dropdown-item"><i class="fas fa-user"></i> Perfil</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-cog"></i> Configurações</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sub-header">
+        <a href="dashboard.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h2>Relatórios e Estatísticas</h2>
+        <div class="sub-header-actions">
+            <button class="btn btn-outline btn-sm">
+                <i class="fas fa-calendar"></i> Período
+            </button>
+            <button class="btn btn-outline btn-sm">
+                <i class="fas fa-filter"></i> Filtrar
+            </button>
+        </div>
+    </div>
+
+    <main class="container main-content">
+        <div class="tabs">
+            <div class="tab-list">
+                <button class="tab-btn active" data-tab="focos">Focos</button>
+                <button class="tab-btn" data-tab="visitas">Visitas</button>
+                <button class="tab-btn" data-tab="casos">Casos</button>
+            </div>
+            
+            <div class="tab-content active" id="focos">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3>Distribuição de Focos por Tipo</h3>
+                        <p>Abril/2025</p>
+                    </div>
+                    <div class="card-content chart-placeholder">
+                        <i class="fas fa-chart-bar icon-large text-muted"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Relatórios Disponíveis</h3>
+                        <p>Focos e criadouros</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="report-list">
+                            <div class="report-item">
+                                <div class="report-icon info">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Focos por Bairro</div>
+                                    <div class="report-date">Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon success">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Evolução Mensal de Focos</div>
+                                    <div class="report-date">Janeiro a Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon warning">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Tipos de Criadouros</div>
+                                    <div class="report-date">Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="visitas">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3>Cobertura de Visitas por Bairro</h3>
+                        <p>Abril/2025</p>
+                    </div>
+                    <div class="card-content chart-placeholder">
+                        <i class="fas fa-chart-bar icon-large text-muted"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Relatórios Disponíveis</h3>
+                        <p>Visitas e cobertura</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="report-list">
+                            <div class="report-item">
+                                <div class="report-icon info">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Visitas por Agente</div>
+                                    <div class="report-date">Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon success">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Imóveis Visitados vs Pendentes</div>
+                                    <div class="report-date">Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon purple">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Tempo Médio por Visita</div>
+                                    <div class="report-date">Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="casos">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3>Casos Suspeitos e Confirmados</h3>
+                        <p>Janeiro a Abril/2025</p>
+                    </div>
+                    <div class="card-content chart-placeholder">
+                        <i class="fas fa-chart-bar icon-large text-muted"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Relatórios Disponíveis</h3>
+                        <p>Casos e notificações</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="report-list">
+                            <div class="report-item">
+                                <div class="report-icon danger">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Casos por Bairro</div>
+                                    <div class="report-date">Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon yellow">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Evolução de Casos</div>
+                                    <div class="report-date">Janeiro a Abril/2025</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+
+                            <div class="report-item">
+                                <div class="report-icon pink">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="report-info">
+                                    <div class="report-name">Distribuição por Tipo</div>
+                                    <div class="report-date">Dengue, Zika, Chikungunya</div>
+                                </div>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-download"></i> Baixar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
